@@ -1,0 +1,13 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://b3k7bvshuubs1"]
+
+[resource]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -800, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1280, 600, 1)
+direction = Vector3(0.3, 1, 0)
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 98, 0)

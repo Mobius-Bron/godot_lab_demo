@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="时间系统与日夜光影2d"
+run/main_scene="uid://c1vib0jmtvd68"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameUi="*res://sence/game_ui/game_ui.tscn"
+WeatherManager="*res://sence/weather_manager/weather_manager.tscn"
+DayNightCycle="*res://sence/day_night_cycle/day_night_cycle.tscn"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
+
+[dotnet]
+
+project/assembly_name="时间系统与日夜光影2d"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

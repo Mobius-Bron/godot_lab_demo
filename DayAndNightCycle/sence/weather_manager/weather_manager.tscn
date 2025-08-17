@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://gov2dk56c1wt"]
+
+[ext_resource type="Script" uid="uid://b5l2lscx2h84f" path="res://sence/weather_manager/weather_manager.gd" id="1_2bcsa"]
+[ext_resource type="Texture2D" uid="uid://de7sk8el7b2vw" path="res://assets/tilemaps/overworld_tileset_grass.png" id="2_olh1x"]
+[ext_resource type="Material" uid="uid://b3k7bvshuubs1" path="res://assets/particles/rain.tres" id="3_blwnr"]
+[ext_resource type="Material" uid="uid://bc6wkt03u0nyb" path="res://assets/particles/snow.tres" id="4_blwnr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acte7"]
+atlas = ExtResource("2_olh1x")
+region = Rect2(18, 86, 1, 7)
+
+[node name="WeatherManager" type="Node2D"]
+z_index = 5
+script = ExtResource("1_2bcsa")
+
+[node name="Rain" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 400
+texture = SubResource("AtlasTexture_acte7")
+lifetime = 5.0
+process_material = ExtResource("3_blwnr")
+
+[node name="Snow" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 800
+lifetime = 8.0
+process_material = ExtResource("4_blwnr")

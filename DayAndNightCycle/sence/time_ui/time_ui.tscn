@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://cr1l77bo68ryu"]
+
+[ext_resource type="FontFile" uid="uid://dt6jbuskqvs7g" path="res://assets/fonts/pixelmix/pixelmix.ttf" id="1_5a7jy"]
+[ext_resource type="Texture2D" uid="uid://b435cqm35cj4u" path="res://assets/ui/daynightcycle-ui.png" id="2_ooahy"]
+[ext_resource type="Script" uid="uid://bu81oapphn1pr" path="res://sence/time_ui/time_ui.gd" id="2_ypgv7"]
+
+[sub_resource type="Theme" id="Theme_37ucm"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 4
+Label/fonts/font = ExtResource("1_5a7jy")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4pvk"]
+atlas = ExtResource("2_ooahy")
+region = Rect2(1, 1, 73, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lwn1"]
+atlas = ExtResource("2_ooahy")
+region = Rect2(1, 47, 17, 5)
+
+[node name="TimeUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_37ucm")
+script = ExtResource("2_ypgv7")
+
+[node name="BackGround" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 105.0
+offset_bottom = 75.0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_g4pvk")
+
+[node name="Arrow" type="TextureRect" parent="BackGround"]
+unique_name_in_owner = true
+modulate = Color(1, 0.513726, 1, 1)
+layout_mode = 0
+offset_left = 51.0
+offset_top = 19.0
+offset_right = 68.0
+offset_bottom = 24.0
+pivot_offset = Vector2(0.5, 2.5)
+texture = SubResource("AtlasTexture_6lwn1")
+stretch_mode = 2
+
+[node name="Date" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 38.0
+offset_right = 132.0
+offset_bottom = 74.0
+
+[node name="DateLabel" type="Label" parent="Date"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Day 13"
+
+[node name="Time" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 78.0
+offset_right = 132.0
+offset_bottom = 114.0
+
+[node name="TimeLabel" type="Label" parent="Time"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "12:00"
+horizontal_alignment = 1
+vertical_alignment = 1
